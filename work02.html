@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>音乐播放器</title>
+		<style type="text/css">
+		#nav {
+				margin-top: 0px;
+				margin-left:0px;
+				line-height: 50px;
+				width: 500px; 
+				list-style-type: none; 
+				vertical-align: center;
+				overflow:visible;	
+			}
+		#zai{
+			background: cornflowerblue;
+			width: 250px;
+			height: 50px;
+			float: left;
+			font-size: 100;
+			color:white;
+			font-weight: bolder;
+			text-align: center;
+		}
+		#local{
+			width: 250px;
+			height: 50px;
+			float: left;
+			font-size: 100;
+			text-align: center;
+			background:black;
+			color:white;
+			font-weight: bolder;
+			
+		}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<div id="zai"><a href="#">在线音乐</a></div>
+			<div id="locol"><a href="#">本地音乐</a></div>
+		</div>
+		<div id="value">
+			<p> 都选C      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="#" id="p">播放</a> 
+			</p>
+			<p> 安娜的橱窗     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="#" id="p2">播放</a>  
+			</p>
+		</div>
+	<footer>
+		<div >
+			<audio src="work02/大鹏 - 都选C.mp3" controls="controls" id="music1" autoplay="true"></audio>
+		</div>
+		<div >
+				<audio src="work02/封茗囧菌 - 安娜的橱窗.mp3" id="music2" ></audio>
+		</div>
+	</footer>
+	</body>
+	<script type="text/javascript">
+		 var m1=document.getElementById("p")
+		 p.onclick=function(){
+		 		if (music1.paused){
+		 			music2.pause();
+		 			music1.play();
+		 		}
+		 	}
+		 var m2=document.getElementById("p2");
+		 p2.onclick=function(){
+		 	music1.pause();
+		 	music2.play();
+		 }
+		
+	</script>
+</html>
