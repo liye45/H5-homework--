@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="img/snowflake.png" />
+	<style type="text/css">
+		legend{color: red;}
+	</style>
+	<title>homework01</title>
+</head>
+<body>
+	<h1>请填写个人信息</h1>
+	<form>
+	<form>
+  	<fieldset>
+    <legend>基本信息</legend>
+    	姓名 <input type="text" name="name" id="name" required="required"  /><span style="color:red;">*</span> 
+    	<br>
+    	年龄 <input type="number" name="age" id="age" min="1" max="120" step="1" />
+    	
+   </fieldset>
+   </form>
+   <form>
+   <fieldset>
+    <legend>您想在哪里收到邮件</legend>
+   	 邮箱
+    <input type="email" name="email" id="email" placeholder="请输入邮箱" list="type" /><span style="color:red;">*</span>
+    <datalist id="type" onkeyup="add()">
+    	<option id="yi" ></option>
+    	<option id="er" ></option>
+    	<option id="th" ></option>
+    	<option id="for" ></option>
+    </datalist>
+   </fieldset>
+   </form>
+   <form>
+   <fieldset>
+    <legend>收入情况</legend>
+   	 月收入
+   	 <input type="search" name="aoto" id="sear" list="names" />
+   	 <datalist id="names">
+   	 	<option>10K+</option>
+   	 	<option>20k+</option>
+   	 	<option>30k+</option>
+   	 	<option>40k+</option>
+   	 	<option>50k+</option>
+   	 	<option>60k+</option>
+   	 </datalist>
+   	 <br>
+   	 银行卡
+   	 <input type="text" name="yinhang"/>
+   	 有效期
+   	 <input type="date"  />
+   </fieldset>
+   </form>
+   <form>
+   <fieldset>
+    <legend>选择提交文件</legend>
+   	 文件
+    <input type="file" name="file" id="file"  />
+   </fieldset>
+   </form>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" />
+   </from>
+   <script type="text/javascript">
+   	var num=document.getElementById("email");
+    add(){
+    	yi.value=num+'@qq.com'
+    }
+   </script>
+</body>
+</html>	
