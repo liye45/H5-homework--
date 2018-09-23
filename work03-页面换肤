@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面换肤</title>
+	</head>
+	<style type="text/css">
+		#colo{
+			width:1100px ;
+			height: 60px;
+			border: 1px solid black;
+			
+		}
+		#hui{
+			width: 30px;
+			height: 30px;
+			background-color: darkgray;
+			float: left;
+			margin-left: 30px;
+			margin-top: 15px;
+		}
+		#red{
+			width: 30px;
+			height: 30px;
+			background-color:red;
+			float: left;
+			margin-left: 30px;
+			margin-top: 15px;
+					}
+		#blue{
+			width: 30px;
+			height: 30px;
+			background-color: deepskyblue;
+			float: left;
+			margin-left: 30px;
+			margin-top: 15px;
+		}
+		#green{
+			width: 30px;
+			height: 30px;
+			background-color: green;
+			float: left;
+			margin-left: 30px;
+			margin-top: 15px;
+		}
+		#purple{
+			width: 30px;
+			height: 30px;
+			background-color:palevioletred;
+			float: left;
+			margin-left: 30px;
+			margin-top: 15px;
+		}
+		legend{color: red;}
+	</style>
+	<body>
+		<fieldset>
+			<legend>页面换肤</legend>
+			<div id='colo'>
+				<div id="hui" onclick="change1()"></div>
+				<div id="red" onclick="change2()"></div>
+				<div id="blue" onclick="change3()"></div>
+				<div id="green" onclick="change4()"></div>
+				<div id="purple" onclick="change5()"></div>
+			</div>
+			<div id="change">
+			<p>
+				LocalStorage 将数据保存在客户端本地的硬件设备中，即使浏览器被关闭，该数据任然存在，下次打开浏览器访问网站时仍然可以继续使用
+			</p>
+		</div>
+		</fieldset>
+		<script type="text/javascript">
+		var change=document.getElementById("change")
+		var one=document.getElementById("hui");
+		var two=document.getElementById("red");
+		var three=document.getElementById("blue");
+		var four=document.getElementById("green");
+		var five=document.getElementById("purple");
+		var all=document.getElementById("colo")
+		function change1(){
+			change.style.background="rgb(192,192,192)";
+			all.style.marginTop="0px"
+			one.style.marginTop="5px"
+			localStorage['one']="rgb(192,192,192)"
+		}
+		function change2(){
+			change.style.background="rgb(255,0,0)";
+			all.style.marginTop="0px"
+			two.style.marginTop="5px"
+			localStorage['one']="rgb(255,0,0)"
+		}
+		function change3(){
+			change.style.background="rgb(0,255,255)";
+			all.style.marginTop="0px"
+			three.style.marginTop="5px"
+			localStorage['one']="rgb(0,255,255)";
+		}
+		function change4(){
+			change.style.background="rgb(0,255,0)";
+			all.style.marginTop="0px"
+			four.style.marginTop="5px"
+			localStorage['one']="rgb(0,255,0)";
+		}
+		function change5(){
+			change.style.background="rgb(255,0,255)";
+			all.style.marginTop="0px"
+			five.style.marginTop="5px"
+			localStorage['one']="rgb(255,0,255)"
+			
+		}
+		window.onload=function(){
+			if(window.localStorage.getItem('one')){
+				change.style.background=localStorage.getItem('one')
+			}
+			else{
+				change.style.background="none"
+			}
+		}
+		</script>
+
+	</body>
+</html>
