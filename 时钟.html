@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>画布-时钟</title>
+		<style type="text/css">
+			#canvas{
+				border: 1 solid burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="1000" height="1000"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			var context=canvas.getContext("2d");
+//			context.lineWidth=3;
+//			context.strokeStyle="brown"
+//			context.arc(500,500,350,0,2*Math.PI)
+//			context.stroke();
+			function circle(){
+				context.beginPath();
+				context.lineWidth=10;
+				context.strokeStyle="orchid"
+				context.arc(0,0,350,0,2*Math.PI)
+				context.closePath();
+				context.stroke();
+				context.beginPath();
+				context.strokeStyle="black"
+				context.arc(0, 0, 10, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.stroke();
+			}
+			function save(){
+				canvas.height = canvas.height;
+				context.translate(500,500)
+				context.save();
+			}
+			function small(){
+				context.rotate(-Math.PI/2);
+				for(var i = 0; i < 60; i++) {
+					context.lineWidth=5;
+					context.strokeStyle="black"
+					context.beginPath();
+					context.rotate(Math.PI / 30);
+					context.moveTo(300, 0);
+					context.lineTo(320, 0);
+					context.stroke();
+				}
+			}
+			function big(){
+				for(var i = 0; i < 12; i++) {
+					context.lineWidth = 8;
+					context.strokeStyle="red"
+					context.beginPath();
+					context.rotate(Math.PI / 6);
+					context.moveTo(310, 0);
+					context.lineTo(290, 0);
+					context.stroke();
+				}
+			}
+			function num(){
+				var R = 270;
+				context.font = "32px arial";		
+				context.textBaseline = "middle";
+				for(var i = 1; i < 13; i++) {
+					var x = R * Math.cos(i * Math.PI / 6 - Math.PI / 2);
+					var y = R * Math.sin(i * Math.PI / 6 - Math.PI / 2);
+					var len = context.measureText(i);
+					context.fillText(i, x - len.width / 2, y);
+				}
+			}
+			function move(){		
+				var t = new Date();
+				var h = t.getHours();
+				h = h>12?(h-12):h;
+				var m = t.getMinutes();					
+				context.save();
+				context.strokeStyle="chartreuse"
+				context.lineWidth = 10;
+				context.beginPath();
+				context.rotate((Math.PI/6)*(h+m/60+s/3600));
+				context.moveTo(-20,0);
+				context.lineTo(150,0);
+				context.stroke();
+				context.restore();
+				context.save();
+				context.lineWidth = 5;
+				context.strokeStyle="gold";
+				context.beginPath();
+				context.rotate((Math.PI/30)*(m+s/60));
+				context.moveTo(-20,0);
+				context.lineTo(250,0);
+				context.stroke();
+				context.restore();
+				context.save();
+				context.lineWidth = 2;
+				context.strokeStyle="deepskyblue"
+				context.beginPath();
+				context.rotate((Math.PI/30)*s);
+				context.moveTo(-20,0);
+				context.lineTo(270,0);
+				context.stroke();
+			}
+			function clock() {	
+				save();
+				num();
+				small();
+				big();
+				circle();
+				move();			
+			}		
+			setInterval(clock,1000);
+		</script>
+	</body>
+	
+</html>
