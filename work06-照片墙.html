@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>照片墙</title>
+		<style type="text/css">
+			body{
+				background: url(images/img1.jpg) repeat;
+				
+			}
+			.all{
+				margin-top: 150px;
+				margin-left: 50px;
+			}
+			img{
+				width: 210px;
+				height: 150px;
+				float: left;
+				margin-right: 20px; 
+				border: solid 10px white;
+				border-bottom:solid 40px white;
+				
+			}
+			#d1{
+				transform:rotate(4deg) ;
+			}
+			#d1:hover{
+				transform: rotate(-4deg);
+				transform: translateY(-5px);
+			
+			}
+			#d2{transform: translateY(-15px);}
+			#d2:hover{
+				transform: translateY(7px);
+				transform: scale(1.2,1.2);
+			}
+			#d3{
+				transform: translate(-20px);
+				transform: rotate(10deg);
+			}
+			#d3:hover{
+				transform:translate(20px) ;
+				transform: rotate(-3deg);
+			}
+			#d4{
+				transform: translate(-5px,-40px);
+			}
+			#d4:hover{
+				transform: translate(5px,40px);
+				transform: scale(1.1,1.1);
+			}
+			#d5{
+				transform: scale(0.8,0.8);
+				transform: rotate(-4deg);
+			}
+			#d5:hover{
+				transform: scale(1.1,1.1);
+				transform: rotate(-1deg);
+			}
+			#d6{
+				transform:translate(20px,-40px);
+				transform: scale(1.1,1.1);
+				transform: rotate(-4deg);
+			}
+			#d6:hover{
+				transform: rotate(-1deg);
+				transform: scale(0.9,0.9);
+				transform: translate(-20px,40px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div id="d1"><img src="images/img8.jpg"/></div>
+			<div id="d2"><img src="images/img7.jpg"/>	</div>
+			<div id="d3"><img src="images/img9.jpg"/>	</div>
+			<div id="d4"><img src="images/img6.jpg"/>	</div>
+			<div id="d5"><img src="images/img4.jpg"/>	</div>
+			<div id="d6"><img src="images/img5.jpg"/>	</div>
+		</div>
+	</body>
+</html>
